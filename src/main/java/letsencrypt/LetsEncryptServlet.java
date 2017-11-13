@@ -19,7 +19,6 @@ public class LetsEncryptServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uri = req.getRequestURI();
 log.info("!!!!!!!!!!!!!!!!!!!!!!! doGet " + uri);
-System.out.println("!!!!!!!!!!!!!!!!!!!!!!! doGet " + uri);
         if (!uri.startsWith("/.well-known/acme-challenge/")) {
             resp.sendError(404);
             return;
@@ -36,6 +35,7 @@ System.out.println("!!!!!!!!!!!!!!!!!!!!!!! doGet " + uri);
             log.severe("challenge not found: " + res);
             resp.sendError(404);
         }
+        log.info("!!!!!!!!!!!!!!!!!!!!!!! response " + resp + " " + respString.trim());
     }
 
     private String sanitizePath(String s) {
