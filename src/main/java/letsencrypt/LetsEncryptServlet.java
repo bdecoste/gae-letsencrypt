@@ -25,16 +25,10 @@ log.info("!!!!!!!!!!!!!!!!!!!!!!! doGet " + uri);
         }
         String challenge = uri.substring("/.well-known/acme-challenge/".length());
         challenge = sanitizePath(challenge);
-        String res = PATH + challenge;
 
-        try {
-            String respString = readResource(res);
-            resp.setContentType("text/plain");
-            resp.getOutputStream().print(challenge + ".aHR0cHM6Ly9hY21lLXN0YWdpbmcuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL3JlZy81MDY2NTQx");
-        } catch (Throwable e) {
-            log.severe("challenge not found: " + res);
-            resp.sendError(404);
-        }
+        resp.setContentType("text/plain");
+        resp.getOutputStream().print(challenge + ".aHR0cHM6Ly9hY21lLXN0YWdpbmcuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL3JlZy81MDY2NTQx");
+        
         log.info("!!!!!!!!!!!!!!!!!!!!!!! response " + resp);
     }
 
