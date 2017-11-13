@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>sfsbTest</groupId>
-	<artifactId>acme</artifactId>
+	<artifactId>ROOT</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
 	<name>as</name>
@@ -58,31 +58,10 @@
 				<version>2.1.1</version>
 				<configuration>
 					<webappDirectory>WebContent</webappDirectory>
+                                        <warName>ROOT</warName>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-<profiles>
-<profile>
-<!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
-<!-- Use this profile for any OpenShift specific customization your app will need. -->
-<!-- By default that is to put the resulting archive into the 'deployments' folder. -->
-<!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
-<id>openshift</id>
-<build>
-<finalName>sfsbTest</finalName>
-<plugins>
-<plugin>
-<artifactId>maven-war-plugin</artifactId>
-<version>2.1.1</version>
-<configuration>
-<outputDirectory>deployments</outputDirectory>
-<warName>acme</warName>
-</configuration>
-</plugin>
-</plugins>
-</build>
-</profile>
-</profiles>
 
 </project>
