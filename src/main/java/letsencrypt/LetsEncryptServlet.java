@@ -35,7 +35,7 @@ log.info("!!!!!!!!!!!!!!!!!!!!!!! doGet " + uri);
             log.severe("challenge not found: " + res);
             resp.sendError(404);
         }
-        log.info("!!!!!!!!!!!!!!!!!!!!!!! response " + resp + " " + respString.trim());
+        log.info("!!!!!!!!!!!!!!!!!!!!!!! response " + resp);
     }
 
     private String sanitizePath(String s) {
