@@ -30,7 +30,7 @@ log.info("!!!!!!!!!!!!!!!!!!!!!!! doGet " + uri);
         try {
             String respString = readResource(res);
             resp.setContentType("text/plain");
-            resp.getOutputStream().print(respString.trim());
+            resp.getOutputStream().print(challenge + ".aHR0cHM6Ly9hY21lLXN0YWdpbmcuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL3JlZy81MDY2NTQx");
         } catch (Throwable e) {
             log.severe("challenge not found: " + res);
             resp.sendError(404);
