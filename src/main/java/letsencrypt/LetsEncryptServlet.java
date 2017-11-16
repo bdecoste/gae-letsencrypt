@@ -27,8 +27,9 @@ log.info("!!!!!!!!!!!!!!!!!!!!!!! doGet " + uri);
         challenge = sanitizePath(challenge);
 
         resp.setContentType("text/plain");
-        resp.getOutputStream().print(challenge + ".fpeYXU1oqrggvGzcwYXLo6rG-LQcnbyyrwiX7LSsy40");
-        
+        //resp.getOutputStream().print(challenge + ".fpeYXU1oqrggvGzcwYXLo6rG-LQcnbyyrwiX7LSsy40");
+        resp.getOutputStream().print(challenge + ".e92350750a36225477ef5d94b825330feb91865a");
+                                                 
         log.info("!!!!!!!!!!!!!!!!!!!!!!! response " + resp);
     }
 
