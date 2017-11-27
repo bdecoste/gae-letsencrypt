@@ -136,7 +136,7 @@
                 },
                 "annotations": {
                     "description": "Route for application's http service.",
-                    "kubernetes.io/tls-acme": "true" 
+                    "kubernetes.io/tls-acme": "true"
                 }
             },
             "spec": {
